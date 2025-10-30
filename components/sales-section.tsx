@@ -15,7 +15,7 @@ interface Product {
 }
 
 interface SalesSectionProps {
-  onAddToCart: (product: any) => void
+  onAddToCart: (product: { id: number; name: string; price: number }) => void
 }
 
 export function SalesSection({ onAddToCart }: SalesSectionProps) {
@@ -124,8 +124,6 @@ export function SalesSection({ onAddToCart }: SalesSectionProps) {
                           id: product.id,
                           name: product.name,
                           price: product.price,
-                          image: product.image,
-                          description: `Скидка ${product.discount}%`,
                         })
                       }
                       className="w-full bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold uppercase transition-all duration-200 text-xs h-8 md:h-9"

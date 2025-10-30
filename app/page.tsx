@@ -26,7 +26,7 @@ interface Product {
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product: { id: number; name: string; price: number }) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id)
       if (existingItem) {
