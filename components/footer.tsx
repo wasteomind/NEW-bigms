@@ -4,18 +4,44 @@ export function Footer() {
   return (
     <footer className="bg-[#2d3e7f] text-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4">О компании</h3>
+            <h3 className="text-lg font-bold mb-4 uppercase">Каталог</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  О нас
+                  Водяной теплый пол
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Бренды
+                  Электрический теплый пол
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Котлы отопления
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Бойлеры
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4 uppercase">Компания</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  О компании
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Контакты
                 </a>
               </li>
               <li>
@@ -25,82 +51,86 @@ export function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Вакансии
+                  Блог
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Отзывы
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Покупателям</h3>
+            <h3 className="text-lg font-bold mb-4 uppercase">Информация</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Доставка
+                  Условия оплаты
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Оплата
+                  Условия доставки
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Гарантия
+                  Гарантия на товар
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Возврат товара
+                  Политика конфиденциальности
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Согласие на обработку персональных данных
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Каталог</h3>
+            <h3 className="text-lg font-bold mb-4 uppercase">Помощь</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Котлы
+                  Вопрос-ответ
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Насосы
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gray-300 transition-colors">
-                  Радиаторы
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gray-300 transition-colors">
-                  Трубы и фитинги
+                  Заявка на расчет оборудования
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Контакты</h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="tel:+74952553362" className="hover:text-gray-300 transition-colors">
-                  +7 (495) 255-33-62
-                </a>
+                <div>
+                  <a href="tel:+74952553362" className="hover:text-gray-300 transition-colors block font-semibold">
+                    +7 (495) 255-33-62
+                  </a>
+                  <a href="#" className="text-xs text-gray-300 hover:text-white transition-colors uppercase">
+                    Заказать звонок
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@bigmaster.ru" className="hover:text-gray-300 transition-colors">
-                  info@bigmaster.ru
+                <a href="mailto:bms@bigms.ru" className="hover:text-gray-300 transition-colors">
+                  bms@bigms.ru
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Москва, ул. Примерная, д. 1</span>
+                <span>г. Москва, 41 км МКАД, 4с14</span>
               </li>
             </ul>
           </div>
