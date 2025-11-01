@@ -18,19 +18,19 @@ export function BannerCarousel() {
     {
       id: 1,
       title: "Трубы",
-      subtitle: "Профессиональные трубопроводы для любых систем",
+      subtitle: "Профессиональный ассортимент индустриальных труб",
       image: "/banners/pipes.jpg",
     },
     {
       id: 2,
       title: "Фитинги для труб",
-      subtitle: "Качественные фитинги и соединители",
+      subtitle: "Качественные фитинги для любых систем",
       image: "/banners/fittings.jpg",
     },
     {
       id: 3,
       title: "Бойлеры",
-      subtitle: "Современные решения для горячего водоснабжения",
+      subtitle: "Современные системы подогрева воды",
       image: "/banners/boilers.jpg",
     },
     {
