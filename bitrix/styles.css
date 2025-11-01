@@ -758,14 +758,16 @@ body {
   letter-spacing: 0.025em;
   cursor: pointer;
   border-radius: 0.5rem;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
   /* added text-decoration for links */
   text-decoration: none;
+  min-height: 80px;
 }
 
 @media (min-width: 768px) {
   .brand-item {
     font-size: 1.125rem;
+    min-height: 100px;
   }
 }
 
@@ -773,6 +775,25 @@ body {
   background-color: #f9fafb;
   /* added color change on hover for links */
   color: #ff4444;
+  transform: scale(1.05);
+}
+
+/* Added brand logo image styling */
+.brand-logo {
+  max-height: 60px;
+  max-width: 90%;
+  object-fit: contain;
+  transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .brand-logo {
+    max-height: 80px;
+  }
+}
+
+.brand-item:hover .brand-logo {
+  filter: brightness(0.8);
 }
 
 /* Sales section */
