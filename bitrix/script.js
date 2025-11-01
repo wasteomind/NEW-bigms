@@ -1,5 +1,16 @@
-// Cart management
-const cart = []
+// Cart management with localStorage persistence
+const CART_STORAGE_KEY = "bm_cart"
+
+const cart = loadCartFromStorage()
+
+function loadCartFromStorage() {
+  const stored = localStorage.getItem(CART_STORAGE_KEY)
+  return stored ? JSON.parse(stored) : []
+}
+
+function saveCartToStorage() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart))
+}
 
 function addToCart(id, name, price) {
   const existingItem = cart.find((item) => item.id === id)
@@ -10,6 +21,7 @@ function addToCart(id, name, price) {
     cart.push({ id, name, price, quantity: 1 })
   }
 
+  saveCartToStorage()
   updateCartDisplay()
 }
 
@@ -30,6 +42,9 @@ function updateCartDisplay() {
     cartTotal.style.display = "none"
   }
 }
+
+// Initialize cart display on page load
+updateCartDisplay()
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobileMenuBtn")

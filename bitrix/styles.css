@@ -163,6 +163,8 @@ body {
   align-items: center;
   height: 4rem;
   gap: 0.75rem;
+  /* fixed width for stable layout */
+  width: 100%;
 }
 
 .logo {
@@ -215,8 +217,9 @@ body {
 
 .search-box {
   display: none;
-  flex: 1;
-  max-width: 48rem;
+  /* set fixed width instead of flex: 1 */
+  width: 400px;
+  max-width: 100%;
   position: relative;
   margin: 0 1rem;
 }
@@ -756,6 +759,8 @@ body {
   cursor: pointer;
   border-radius: 0.5rem;
   transition: background-color 0.2s;
+  /* added text-decoration for links */
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -766,6 +771,8 @@ body {
 
 .brand-item:hover {
   background-color: #f9fafb;
+  /* added color change on hover for links */
+  color: #ff4444;
 }
 
 /* Sales section */
