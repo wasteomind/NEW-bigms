@@ -17,21 +17,27 @@ export function BannerCarousel() {
   const banners: Banner[] = [
     {
       id: 1,
-      title: "Промышленная сантехника",
-      subtitle: "Профессиональные решения для промышленных объектов",
-      image: "/industrial-plumbing-equipment.jpg",
+      title: "Трубы",
+      subtitle: "Профессиональные трубопроводы для любых систем",
+      image: "/banners/pipes.jpg",
     },
     {
       id: 2,
-      title: "Системы отопления",
-      subtitle: "Надежное оборудование для вашего комфорта",
-      image: "/heating-systems-boilers.jpg",
+      title: "Фитинги для труб",
+      subtitle: "Качественные фитинги и соединители",
+      image: "/banners/fittings.jpg",
     },
     {
       id: 3,
-      title: "Водоснабжение",
-      subtitle: "Качественные решения для водоснабжения",
-      image: "/water-supply-pipes.jpg",
+      title: "Бойлеры",
+      subtitle: "Современные решения для горячего водоснабжения",
+      image: "/banners/boilers.jpg",
+    },
+    {
+      id: 4,
+      title: "Монтаж водяного теплого пола",
+      subtitle: "Профессиональная установка систем отопления",
+      image: "/banners/underfloor-heating.jpg",
     },
   ]
 
