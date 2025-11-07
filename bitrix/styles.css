@@ -799,7 +799,8 @@ body {
 /* Sales section */
 .sales-section {
   padding: 2rem 0;
-  background-color: #f9fafb;
+  /* removed background-color: #f9fafb; for clean white background */
+  background-color: white;
 }
 
 @media (min-width: 768px) {
