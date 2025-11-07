@@ -135,6 +135,17 @@ export function SalesSection({ onAddToCart }: SalesSectionProps) {
               </Card>
             ))}
           </div>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/sales"
+              className="inline-flex items-center gap-2 bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold px-8 py-3 rounded-lg transition-colors duration-200 text-sm md:text-base"
+            >
+              Все акционные товары
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
