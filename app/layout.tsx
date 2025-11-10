@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -10,8 +9,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "БОЛЬШОЙ МАСТЕР - Промышленная сантехника и отопление",
+  description: "Промышленная сантехника, отопление и водоснабжение",
   generator: "v0.app",
 }
 
@@ -21,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.className} font-sans antialiased`}>
-        {children}
-        <Analytics />
-      </body>
+    <html lang="ru">
+      <body className={`${montserrat.className} font-sans antialiased`}>{children}</body>
     </html>
   )
 }
