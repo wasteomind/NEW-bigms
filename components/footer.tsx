@@ -3,11 +3,11 @@ import { Phone, Mail, MapPin } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-[#2d3e7f] text-white">
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-3 md:px-4 py-6 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4">О компании</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">О компании</h3>
+            <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
                   О нас
@@ -32,8 +32,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Покупателям</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Покупателям</h3>
+            <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
                   Доставка
@@ -58,8 +58,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Каталог</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Каталог</h3>
+            <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
                   Котлы
@@ -84,8 +84,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Контакты</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Контакты</h3>
+            <ul className="space-y-2 md:space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <a href="tel:+74952553362" className="hover:text-gray-300 transition-colors">
@@ -106,7 +106,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm">
+        <div className="border-t border-white/20 mt-6 md:mt-8 pt-4 md:pt-6 text-center text-xs md:text-sm">
           <p>&copy; 2025 БОЛЬШОЙ МАСТЕР. Все права защищены.</p>
         </div>
       </div>

@@ -3,8 +3,6 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { BannerCarousel } from "@/components/banner-carousel"
-import { BrandsSection } from "@/components/brands-section"
-import { SalesSection } from "@/components/sales-section"
 import { CatalogSections } from "@/components/catalog-sections"
 import { Footer } from "@/components/footer"
 
@@ -41,19 +39,11 @@ export default function Home() {
       <Header cartItems={cartItems} onUpdateCart={setCartItems} />
 
       <main>
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-3 md:px-4 py-3 md:py-6">
           <BannerCarousel />
         </div>
-
-        <BrandsSection />
-
-        <SalesSection onAddToCart={handleAddToCart} />
 
         <CatalogSections />
-
-        <div className="container mx-auto px-4 py-6">
-          <BannerCarousel />
-        </div>
       </main>
 
       <Footer />

@@ -51,7 +51,7 @@ export function BannerCarousel() {
   }
 
   return (
-    <div className="relative w-full h-[200px] bg-black overflow-hidden rounded-lg">
+    <div className="relative w-full h-[150px] md:h-[200px] bg-black overflow-hidden rounded-lg">
       {banners.map((banner, index) => (
         <div
           key={banner.id}
@@ -60,9 +60,9 @@ export function BannerCarousel() {
           }`}
         >
           <img src={banner.image || "/placeholder.svg"} alt={banner.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-8 md:px-16">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">{banner.title}</h2>
-            <p className="text-sm md:text-lg text-white/90">{banner.subtitle}</p>
+          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-4 md:px-16">
+            <h2 className="text-lg md:text-4xl font-bold text-white mb-1 md:mb-2">{banner.title}</h2>
+            <p className="text-xs md:text-lg text-white/90">{banner.subtitle}</p>
           </div>
         </div>
       ))}
@@ -70,26 +70,28 @@ export function BannerCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-10 h-10"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 md:w-10 md:h-10"
         onClick={prevSlide}
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
       </Button>
 
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-10 h-10"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 md:w-10 md:h-10"
         onClick={nextSlide}
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
       </Button>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2">
         {banners.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "bg-white w-6" : "bg-white/50"}`}
+            className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${
+              index === currentSlide ? "bg-white w-4 md:w-6" : "bg-white/50"
+            }`}
             onClick={() => setCurrentSlide(index)}
           />
         ))}

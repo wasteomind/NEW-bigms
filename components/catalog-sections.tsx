@@ -105,10 +105,10 @@ export function CatalogSections() {
   ]
 
   return (
-    <div className="py-8 md:py-12 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#2d3e7f] mb-6 md:mb-8">Каталог</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+    <div className="py-4 md:py-12 bg-white">
+      <div className="container mx-auto px-3 md:px-4">
+        <h2 className="text-xl md:text-3xl font-bold text-[#2d3e7f] mb-4 md:mb-8">Каталог</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6">
           {categories.map((category) => (
             <Card
               key={category.name}
@@ -121,11 +121,11 @@ export function CatalogSections() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3 md:p-4 space-y-1">
-                <h3 className="font-bold text-gray-900 text-sm md:text-base line-clamp-2 min-h-[40px]">
+              <div className="p-2 md:p-4 space-y-1">
+                <h3 className="font-bold text-gray-900 text-xs md:text-base line-clamp-2 min-h-[32px] md:min-h-[40px]">
                   {category.name}
                 </h3>
-                <p className="text-xs md:text-sm text-gray-600">{category.count}</p>
+                <p className="text-[10px] md:text-sm text-gray-600">{category.count}</p>
               </div>
             </Card>
           ))}
