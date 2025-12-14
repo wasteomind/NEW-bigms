@@ -70,7 +70,7 @@ export function BannerCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 md:w-10 md:h-10"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 text-white rounded-full w-8 h-8 md:w-10 md:h-10"
         onClick={prevSlide}
       >
         <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
@@ -79,7 +79,7 @@ export function BannerCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-8 h-8 md:w-10 md:h-10"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 text-white rounded-full w-8 h-8 md:w-10 md:h-10"
         onClick={nextSlide}
       >
         <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
