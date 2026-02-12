@@ -15,14 +15,6 @@ interface CartItem {
   quantity: number
 }
 
-interface Product {
-  id: number
-  name: string
-  price: number
-  image: string
-  description: string
-}
-
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
@@ -37,7 +29,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header cartItems={cartItems} onUpdateCart={setCartItems} />
 
       <main>

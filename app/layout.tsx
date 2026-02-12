@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "БОЛЬШОЙ МАСТЕР - Промышленная сантехника и отопление",
   description: "Промышленная сантехника, отопление и водоснабжение",
-  generator: "v0.app",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${montserrat.className} font-sans antialiased`}>{children}</body>
+      <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   )
 }
