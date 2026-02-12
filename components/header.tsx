@@ -137,7 +137,7 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
               </Button>
 
               <div className="hidden sm:flex flex-1 max-w-3xl relative mx-4">
-                <div className="relative bg-white/10 rounded-md px-4 py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
+                <div className="relative bg-white/10 rounded-md pl-4 pr-12 py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
                   <Input
                     type="text"
                     placeholder="ПОИСК"
@@ -145,15 +145,22 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
                     onChange={(e) => setSearchValue(e.target.value)}
                     className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-6 px-0 text-sm"
                   />
-                  <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 pointer-events-none" />
+                  <button
+                    type="button"
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-md bg-[#ff4444] hover:bg-[#ff6622] active:scale-90 transition-all duration-200 cursor-pointer"
+                    aria-label="Поиск"
+                  >
+                    <Search className="w-5 h-5 text-white" strokeWidth={2.5} />
+                  </button>
                 </div>
               </div>
 
               <button
                 onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
-                className="sm:hidden text-white hover:text-white/80 transition-colors ml-auto"
+                className="sm:hidden ml-auto w-9 h-9 flex items-center justify-center rounded-md bg-[#ff4444] hover:bg-[#ff6622] active:scale-90 transition-all duration-200"
+                aria-label="Поиск"
               >
-                <Search className="w-5 h-5" />
+                <Search className="w-5 h-5 text-white" strokeWidth={2.5} />
               </button>
 
               <div className="hidden md:flex items-center gap-2 text-white hover:text-white/80 transition-colors flex-shrink-0">
