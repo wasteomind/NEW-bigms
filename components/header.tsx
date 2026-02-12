@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, User, Menu, X, ShoppingCart } from "lucide-react"
+import { Search, Menu, X, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -54,8 +54,7 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#2d3e7f]">
-        {/* Top bar */}
-        <div className="border-b border-[#3d4e8f]">
+        <div className="border-b border-[#3d4e8f] hidden md:block">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-10 md:h-10 text-xs">
               <nav className="hidden lg:flex items-center gap-6">
@@ -120,63 +119,45 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
 
         {/* Main header */}
         <div className="bg-[#2d3e7f]">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center h-16 gap-3">
+          <div className="container mx-auto px-3 md:px-4">
+            <div className="flex items-center h-14 md:h-16 gap-2 md:gap-3">
               <a href="/" className="flex items-center flex-shrink-0">
-                <span className="text-white text-base md:text-[22px] font-bold tracking-wider whitespace-nowrap">
+                <span className="text-white text-sm md:text-[22px] font-bold tracking-wider whitespace-nowrap">
                   БОЛЬШОЙ МАСТЕР
                 </span>
               </a>
 
               <Button
                 onClick={() => setIsCatalogOpen(!isCatalogOpen)}
-                className="bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold px-3 md:px-6 h-9 md:h-11 rounded uppercase transition-all duration-200 hover:shadow-lg flex-shrink-0 text-xs md:text-sm"
+                className="bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold px-4 md:px-6 h-10 md:h-11 rounded uppercase transition-all duration-200 hover:shadow-lg flex-shrink-0 text-xs md:text-sm"
               >
                 <Menu className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
-                <span className="hidden md:inline">Каталог</span>
+                <span>Каталог</span>
               </Button>
 
-              <div className="hidden sm:flex flex-1 max-w-3xl relative mx-4">
-                <div className="relative bg-white/10 rounded-md pl-4 pr-12 py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
+              <div className="flex-1 relative mx-2 md:mx-4">
+                <div className="relative bg-white/10 rounded-md px-3 md:px-4 py-2 md:py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
                   <Input
                     type="text"
                     placeholder="ПОИСК"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
-                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-6 px-0 text-sm"
+                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-5 md:h-6 px-0 text-sm"
                   />
-                  <button
-                    type="button"
-                    className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-md bg-[#ff4444] hover:bg-[#ff6622] active:scale-90 transition-all duration-200 cursor-pointer"
-                    aria-label="Поиск"
-                  >
-                    <Search className="w-5 h-5 text-white" strokeWidth={2.5} />
-                  </button>
+                  <Search className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-white/60 pointer-events-none" />
                 </div>
               </div>
 
-              <button
-                onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
-                className="sm:hidden ml-auto w-9 h-9 flex items-center justify-center rounded-md bg-[#ff4444] hover:bg-[#ff6622] active:scale-90 transition-all duration-200"
-                aria-label="Поиск"
-              >
-                <Search className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </button>
-
-              <div className="hidden md:flex items-center gap-2 text-white hover:text-white/80 transition-colors flex-shrink-0">
-                <User className="w-4 h-4" />
-                <span className="uppercase text-sm font-medium">Войти</span>
-              </div>
-
-              <button className="flex items-center gap-2 text-white hover:text-white/80 transition-colors group relative flex-shrink-0">
-                <ShoppingCart className="w-5 h-5 sm:hidden" />
-                <span className="hidden sm:inline uppercase text-sm font-medium">Корзина</span>
+              <button className="flex items-center gap-1.5 md:gap-2 text-white hover:text-white/80 transition-colors group relative flex-shrink-0">
+                <ShoppingCart className="w-5 h-5 md:w-5 md:h-5" />
                 {cartCount > 0 && (
                   <>
-                    <span className="bg-[#ff4444] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    <span className="bg-[#ff4444] text-white text-[10px] md:text-xs font-bold rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
                       {cartCount}
                     </span>
-                    <span className="text-xs md:text-sm font-medium">{cartTotal.toLocaleString("ru-RU")} ₽</span>
+                    <span className="text-[10px] md:text-sm font-medium whitespace-nowrap">
+                      {cartTotal.toLocaleString("ru-RU")} ₽
+                    </span>
                   </>
                 )}
               </button>
@@ -184,118 +165,54 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
           </div>
         </div>
 
-        {/* Mobile search */}
-        {isMobileSearchOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[#2d3e7f] border-t border-[#3d4e8f] shadow-lg sm:hidden z-50">
-            <div className="container mx-auto px-4 py-4">
-              <div className="relative bg-white/10 rounded-md px-4 py-3 border border-white/20">
-                <Input
-                  type="text"
-                  placeholder="ПОИСК"
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-7 px-0 text-base"
-                  autoFocus
-                />
-                <button
-                  onClick={() => setIsMobileSearchOpen(false)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Mobile navigation menu */}
+        {/* Catalog dropdown menu */}
         <div
-          className={`fixed top-[104px] left-0 right-0 bg-[#2d3e7f] shadow-lg z-50 lg:hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-          }`}
-        >
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              О компании
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Бренды
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Доставка
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Оплата
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Гарантия
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Сертификаты
-            </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              Контакты
-            </a>
-            <button className="flex items-center gap-2 text-white hover:text-white/80 transition-colors uppercase text-sm py-2">
-              <User className="w-5 h-5" />
-              Войти
-            </button>
-          </nav>
-        </div>
-
-        <div
-          className={`fixed top-[104px] left-0 right-0 bg-white shadow-2xl z-40 transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-104px)] ${
+          className={`fixed top-[56px] md:top-[104px] left-0 right-0 bg-white shadow-2xl z-40 transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-56px)] md:max-h-[calc(100vh-104px)] ${
             isCatalogOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="container mx-auto px-4 py-8 md:py-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-              {catalogItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="group relative px-5 py-4 rounded-lg border border-gray-200 hover:border-[#ff4444] hover:shadow-md transition-all duration-200 bg-white hover:bg-gray-50"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm md:text-base text-gray-700 group-hover:text-[#ff4444] transition-colors duration-200 font-medium">
-                      {item}
-                    </span>
-                    <svg
-                      className="w-4 h-4 text-gray-400 group-hover:text-[#ff4444] group-hover:translate-x-1 transition-all duration-200"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </a>
+          <div className="container mx-auto px-3 md:px-4 py-4 md:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+              {catalogCategories.map((category, idx) => (
+                <div key={idx} className="space-y-2 md:space-y-4">
+                  <h3 className="text-xs md:text-sm font-bold text-[#2d3e7f] uppercase tracking-wide border-b-2 border-[#ff4444] pb-2">
+                    {category.title}
+                  </h3>
+                  <ul className="space-y-1.5 md:space-y-2">
+                    {category.items.map((item, itemIdx) => (
+                      <li key={itemIdx}>
+                        <a
+                          href="#"
+                          className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-sm md:text-sm flex items-center group py-1"
+                        >
+                          <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
 
             <button
               onClick={() => setIsCatalogOpen(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-full"
-              aria-label="Закрыть каталог"
+              className="absolute top-2 md:top-4 right-2 md:right-4 text-gray-400 hover:text-gray-600 transition-colors p-2"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
 
         {/* Overlay */}
-        {(isCatalogOpen || isMobileMenuOpen || isMobileSearchOpen) && (
+        {isCatalogOpen && (
           <div
-            className="fixed inset-0 bg-black/50 z-30 top-[104px] transition-opacity duration-300"
-            onClick={() => {
-              setIsCatalogOpen(false)
-              setIsMobileMenuOpen(false)
-              setIsMobileSearchOpen(false)
-            }}
+            className="fixed inset-0 bg-black/50 z-30 top-[56px] md:top-[104px] transition-opacity duration-300"
+            onClick={() => setIsCatalogOpen(false)}
           />
         )}
       </header>
-      <div className="h-[104px]" />
+      <div className="h-[56px] md:h-[104px]" />
     </>
   )
 }
