@@ -10,22 +10,22 @@ export function Footer() {
             <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  О нас
+                  Водяной теплый пол
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Бренды
+                  Электрический теплый пол
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Сертификаты
+                  Котлы отопления
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Вакансии
+                  Бойлеры
                 </a>
               </li>
             </ul>
@@ -36,22 +36,27 @@ export function Footer() {
             <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Доставка
+                  О компании
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Оплата
+                  Контакты
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Гарантия
+                  Сертификаты
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Возврат товара
+                  Блог
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Отзывы
                 </a>
               </li>
             </ul>
@@ -62,22 +67,43 @@ export function Footer() {
             <ul className="space-y-1.5 md:space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Котлы
+                  Условия оплаты
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Насосы
+                  Условия доставки
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Радиаторы
+                  Гарантия на товар
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-gray-300 transition-colors">
-                  Трубы и фитинги
+                  Политика конфиденциальности
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Согласие на обработку персональных данных
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4 uppercase">Помощь</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Вопрос-ответ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-300 transition-colors">
+                  Заявка на расчет оборудования
                 </a>
               </li>
             </ul>
@@ -88,19 +114,24 @@ export function Footer() {
             <ul className="space-y-2 md:space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="tel:+74952553362" className="hover:text-gray-300 transition-colors">
-                  +7 (495) 255-33-62
-                </a>
+                <div>
+                  <a href="tel:+74952553362" className="hover:text-gray-300 transition-colors block font-semibold">
+                    +7 (495) 255-33-62
+                  </a>
+                  <a href="#" className="text-xs text-gray-300 hover:text-white transition-colors uppercase">
+                    Заказать звонок
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@bigmaster.ru" className="hover:text-gray-300 transition-colors">
-                  info@bigmaster.ru
+                <a href="mailto:bms@bigms.ru" className="hover:text-gray-300 transition-colors">
+                  bms@bigms.ru
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Москва, ул. Примерная, д. 1</span>
+                <span>г. Москва, 41 км МКАД, 4с14</span>
               </li>
             </ul>
           </div>

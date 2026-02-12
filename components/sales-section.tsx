@@ -15,7 +15,7 @@ interface Product {
 }
 
 interface SalesSectionProps {
-  onAddToCart: (product: any) => void
+  onAddToCart: (product: { id: number; name: string; price: number }) => void
 }
 
 export function SalesSection({ onAddToCart }: SalesSectionProps) {
@@ -68,7 +68,7 @@ export function SalesSection({ onAddToCart }: SalesSectionProps) {
   ]
 
   return (
-    <div className="py-8 md:py-12 bg-gray-50">
+    <div className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="border-4 border-[#ff4444] rounded-3xl p-6 md:p-8 bg-white relative overflow-hidden">
           <div className="absolute top-4 right-4 bg-[#ff4444] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg transform rotate-12">
@@ -124,8 +124,6 @@ export function SalesSection({ onAddToCart }: SalesSectionProps) {
                           id: product.id,
                           name: product.name,
                           price: product.price,
-                          image: product.image,
-                          description: `Скидка ${product.discount}%`,
                         })
                       }
                       className="w-full bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold uppercase transition-all duration-200 text-xs h-8 md:h-9"
@@ -136,6 +134,17 @@ export function SalesSection({ onAddToCart }: SalesSectionProps) {
                 </div>
               </Card>
             ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/sales"
+              className="inline-flex items-center gap-2 bg-[#ff4444] hover:bg-[#ff3333] text-white font-bold px-8 py-3 rounded-lg transition-colors duration-200 text-sm md:text-base"
+            >
+              Перейти в раздел
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

@@ -1,29 +1,32 @@
-import { Wrench, Zap, Hammer, Drill, Cog, Share2 } from "lucide-react"
-
 export function BrandsSection() {
   const brands = [
-    { name: "BOSCH", icon: Wrench },
-    { name: "MAKITA", icon: Zap },
-    { name: "DEWALT", icon: Hammer },
-    { name: "HITACHI", icon: Drill },
-    { name: "METABO", icon: Cog },
-    { name: "FESTOOL", icon: Share2 },
+    { name: "Rehau", logo: "/brands/rehau.png", link: "/catalog/rehau/" },
+    { name: "Drazice", logo: "/brands/drazice.png", link: "/catalog/drazice/" },
+    { name: "Elsen", logo: "/brands/elsen.png", link: "/catalog/elsen/" },
+    { name: "FAR LD", logo: "/brands/far.png", link: "/catalog/far/" },
+    { name: "Stout", logo: "/brands/stout.png", link: "/catalog/stout/" },
+    { name: "Varmega", logo: "/brands/varmega.png", link: "/catalog/varmega/" },
+    { name: "Arrowhead", logo: "/brands/arrowhead.png", link: "/catalog/arrowhead/" },
+    { name: "LD", logo: "/brands/ld.png", link: "/catalog/ld/" },
   ]
 
   return (
     <div className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
           {brands.map((brand) => {
-            const Icon = brand.icon
             return (
-              <div
+              <a
                 key={brand.name}
-                className="flex flex-col items-center justify-center p-4 md:p-6 hover:bg-gray-50 transition-colors rounded-lg cursor-pointer"
+                href={brand.link}
+                className="flex items-center justify-center p-3 md:p-4 hover:bg-gray-50 transition-colors rounded-lg cursor-pointer group"
               >
-                <Icon className="w-12 h-12 md:w-16 md:h-16 text-gray-700 mb-2 md:mb-3" />
-                <span className="text-xs md:text-sm font-bold text-gray-900">{brand.name}</span>
-              </div>
+                <img
+                  src={brand.logo || "/placeholder.svg"}
+                  alt={brand.name}
+                  className="max-h-16 max-w-full object-contain group-hover:scale-110 transition-transform"
+                />
+              </a>
             )
           })}
         </div>

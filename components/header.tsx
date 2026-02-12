@@ -26,40 +26,29 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
-  const catalogCategories = [
-    {
-      title: "ОТОПЛЕНИЕ И ВОДОСНАБЖЕНИЕ",
-      items: [
-        "Промышленные рукава и шланги",
-        "Промышленное оборудование",
-        "КИП",
-        "Водяной тёплый пол",
-        "Электрический тёплый пол",
-        "Автоматика для отопления",
-        "Котлы",
-        "Бойлеры",
-      ],
-    },
-    {
-      title: "ВОДОНАГРЕВАТЕЛИ И КЛИМАТ",
-      items: ["Водонагреватели", "Кондиционеры и вентиляция", "Баки мембранные", "Системы защиты от протечек воды"],
-    },
-    {
-      title: "ТРУБЫ И ФИТИНГИ",
-      items: ["Трубы", "Фитинги", "Желоба для труб", "Канализация, гофры, сифоны, трапы"],
-    },
-    {
-      title: "НАСОСЫ И ОБОРУДОВАНИЕ",
-      items: ["Насосы и насосное оборудование", "Теплоноситель и промывка для отопления", "Водоподготовка"],
-    },
-    {
-      title: "РАДИАТОРЫ И АРМАТУРА",
-      items: ["Радиаторы и арматура", "Арматура для котельных", "Крепёж"],
-    },
-    {
-      title: "ИНСТРУМЕНТЫ И АКСЕССУАРЫ",
-      items: ["Инструмент и аксессуары для монтажа"],
-    },
+  const catalogItems = [
+    "КИП",
+    "Промышленное оборудование",
+    "Водяной тёплый пол",
+    "Электрический тёплый пол",
+    "Автоматика для отопления",
+    "Котлы",
+    "Бойлеры",
+    "Водонагреватели",
+    "Кондиционеры и вентиляция",
+    "Трубы",
+    "Насосы и насосное оборудование",
+    "Баки мембранные",
+    "Системы защиты от протечки воды",
+    "Арматура для котельных",
+    "Фитинги",
+    "Радиаторы и арматура",
+    "Водоподготовка",
+    "Инструмент и аксессуары для монтажа",
+    "Крепёж",
+    "Теплоноситель и промывка для отопления",
+    "Канализация, гофры, сифоны, трапы",
+    "Желоба для труб",
   ]
 
   return (
@@ -183,26 +172,18 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
           }`}
         >
           <div className="container mx-auto px-3 md:px-4 py-4 md:py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {catalogCategories.map((category, idx) => (
-                <div key={idx} className="space-y-2 md:space-y-4">
-                  <h3 className="text-xs md:text-sm font-bold text-[#2d3e7f] uppercase tracking-wide border-b-2 border-[#ff4444] pb-2">
-                    {category.title}
-                  </h3>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    {category.items.map((item, itemIdx) => (
-                      <li key={itemIdx}>
-                        <a
-                          href="#"
-                          className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-sm md:text-sm flex items-center group py-1"
-                        >
-                          <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+              {catalogItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-[#ff4444]/30 hover:bg-[#ff4444]/5 transition-all duration-200 group"
+                >
+                  <span className="text-sm text-gray-700 group-hover:text-[#2d3e7f] font-medium">{item}</span>
+                  <svg className="w-4 h-4 text-gray-300 group-hover:text-[#ff4444] ml-auto flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               ))}
             </div>
 

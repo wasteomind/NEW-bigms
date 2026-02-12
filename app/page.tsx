@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { BannerCarousel } from "@/components/banner-carousel"
+import { BrandsSection } from "@/components/brands-section"
+import { SalesSection } from "@/components/sales-section"
 import { CatalogSections } from "@/components/catalog-sections"
 import { Footer } from "@/components/footer"
 
@@ -13,18 +15,10 @@ interface CartItem {
   quantity: number
 }
 
-interface Product {
-  id: number
-  name: string
-  price: number
-  image: string
-  description: string
-}
-
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product: { id: number; name: string; price: number }) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id)
       if (existingItem) {
@@ -35,13 +29,17 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header cartItems={cartItems} onUpdateCart={setCartItems} />
 
       <main>
         <div className="container mx-auto px-3 md:px-4 py-3 md:py-6">
           <BannerCarousel />
         </div>
+
+        <BrandsSection />
+
+        <SalesSection onAddToCart={handleAddToCart} />
 
         <CatalogSections />
       </main>
