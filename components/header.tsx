@@ -173,24 +173,15 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
         >
           <div className="container mx-auto px-3 md:px-4 py-4 md:py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {catalogCategories.map((category, idx) => (
-                <div key={idx} className="space-y-2 md:space-y-4">
-                  <h3 className="text-xs md:text-sm font-bold text-[#2d3e7f] uppercase tracking-wide border-b-2 border-[#ff4444] pb-2">
-                    {category.title}
-                  </h3>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    {category.items.map((item, itemIdx) => (
-                      <li key={itemIdx}>
-                        <a
-                          href="#"
-                          className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-sm md:text-sm flex items-center group py-1"
-                        >
-                          <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+              {catalogItems.map((item, idx) => (
+                <div key={idx}>
+                  <a
+                    href="#"
+                    className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-sm md:text-sm flex items-center group py-1"
+                  >
+                    <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
+                    {item}
+                  </a>
                 </div>
               ))}
             </div>
