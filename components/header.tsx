@@ -26,40 +26,32 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
+  const handleSearch = () => {
+    if (searchValue.trim()) {
+      console.log("Search:", searchValue.trim())
+    }
+  }
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch()
+    }
+  }
+
   const catalogCategories = [
-    {
-      title: "ОТОПЛЕНИЕ И ВОДОСНАБЖЕНИЕ",
-      items: [
-        "Промышленные рукава и шланги",
-        "Промышленное оборудование",
-        "КИП",
-        "Водяной тёплый пол",
-        "Электрический тёплый пол",
-        "Автоматика для отопления",
-        "Котлы",
-        "Бойлеры",
-      ],
-    },
-    {
-      title: "ВОДОНАГРЕВАТЕЛИ И КЛИМАТ",
-      items: ["Водонагреватели", "Кондиционеры и вентиляция", "Баки мембранные", "Системы защиты от протечек воды"],
-    },
-    {
-      title: "ТРУБЫ И ФИТИНГИ",
-      items: ["Трубы", "Фитинги", "Желоба для труб", "Канализация, гофры, сифоны, трапы"],
-    },
-    {
-      title: "НАСОСЫ И ОБОРУДОВАНИЕ",
-      items: ["Насосы и насосное оборудование", "Теплоноситель и промывка для отопления", "Водоподготовка"],
-    },
-    {
-      title: "РАДИАТОРЫ И АРМАТУРА",
-      items: ["Радиаторы и арматура", "Арматура для котельных", "Крепёж"],
-    },
-    {
-      title: "ИНСТРУМЕНТЫ И АКСЕССУАРЫ",
-      items: ["Инструмент и аксессуары для монтажа"],
-    },
+    "Отопление и водоснабжение",
+    "Водонагреватели и климат",
+    "Трубы и фитинги",
+    "Насосы и оборудование",
+    "Радиаторы и арматура",
+    "Инструменты и аксессуары",
+    "Промышленные рукава и шланги",
+    "Промышленное оборудование",
+    "КИП",
+    "Котлы и бойлеры",
+    "Канализация и сифоны",
+    "Водоподготовка",
+    "Крепёж",
   ]
 
   return (
@@ -148,15 +140,22 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
               </Button>
 
               <div className="hidden sm:flex flex-1 max-w-3xl relative mx-4">
-                <div className="relative bg-white/10 rounded-md px-4 py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
+                <div className="relative flex items-center bg-white/10 rounded-md border border-white/20 hover:border-white/40 focus-within:border-white/50 transition-colors w-full">
                   <Input
                     type="text"
                     placeholder="ПОИСК"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
-                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-6 px-0 text-sm"
+                    onKeyDown={handleSearchKeyDown}
+                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-[42px] px-4 text-sm"
                   />
-                  <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 pointer-events-none" />
+                  <button
+                    onClick={handleSearch}
+                    aria-label="Поиск"
+                    className="flex items-center justify-center w-[42px] h-[42px] flex-shrink-0 bg-[#ff4444] rounded-r-md text-white transition-all duration-200 hover:bg-[#ff5c5c] hover:shadow-[0_0_12px_rgba(255,68,68,0.4)] active:scale-90 active:bg-[#e03333] cursor-pointer"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
 
@@ -192,18 +191,26 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
         {isMobileSearchOpen && (
           <div className="absolute top-full left-0 right-0 bg-[#2d3e7f] border-t border-[#3d4e8f] shadow-lg sm:hidden z-50">
             <div className="container mx-auto px-4 py-4">
-              <div className="relative bg-white/10 rounded-md px-4 py-3 border border-white/20">
+              <div className="relative flex items-center bg-white/10 rounded-md border border-white/20">
                 <Input
                   type="text"
                   placeholder="ПОИСК"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-7 px-0 text-base"
+                  onKeyDown={handleSearchKeyDown}
+                  className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-[44px] px-4 text-base"
                   autoFocus
                 />
                 <button
+                  onClick={handleSearch}
+                  aria-label="Поиск"
+                  className="flex items-center justify-center w-[44px] h-[44px] flex-shrink-0 bg-[#ff4444] text-white transition-all duration-200 hover:bg-[#ff5c5c] active:scale-90 active:bg-[#e03333] cursor-pointer"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+                <button
                   onClick={() => setIsMobileSearchOpen(false)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
+                  className="flex items-center justify-center w-[44px] h-[44px] flex-shrink-0 rounded-r-md text-white/60 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -253,35 +260,25 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
             isCatalogOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="container mx-auto px-4 py-6 md:py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="container mx-auto px-4 py-4 md:py-5 relative">
+            <nav className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0.5">
               {catalogCategories.map((category, idx) => (
-                <div key={idx} className="space-y-3 md:space-y-4">
-                  <h3 className="text-xs md:text-sm font-bold text-[#2d3e7f] uppercase tracking-wide border-b-2 border-[#ff4444] pb-2">
-                    {category.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {category.items.map((item, itemIdx) => (
-                      <li key={itemIdx}>
-                        <a
-                          href="#"
-                          className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-xs md:text-sm flex items-center group"
-                        >
-                          <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <a
+                  key={idx}
+                  href="#"
+                  className="flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm text-gray-700 hover:bg-[#2d3e7f]/5 hover:text-[#ff4444] transition-colors duration-150 group"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff4444] flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
+                  <span className="font-medium">{category}</span>
+                </a>
               ))}
-            </div>
+            </nav>
 
             <button
               onClick={() => setIsCatalogOpen(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
           </div>
         </div>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>БОЛЬШОЙ МАСТЕР — Промышленная сантехника и отопление</title>
+  <meta name="description" content="Интернет-магазин промышленной сантехники, систем отопления и водоснабжения. Широкий ассортимент, доставка по России." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="header" id="header">
+
+  <!-- Top bar -->
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-inner">
+
+        <nav class="header-nav">
+          <a href="#">О компании</a>
+          <a href="#">Бренды</a>
+          <a href="#">Доставка</a>
+          <a href="#">Оплата</a>
+          <a href="#">Гарантия</a>
+          <a href="#">Сертификаты</a>
+          <a href="#">Контакты</a>
+        </nav>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+          <!-- icon: menu -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <div style="flex:1"></div>
+
+        <div class="header-right">
+          <button class="btn-callback">ЗАКАЗАТЬ ЗВОНОК</button>
+          <a href="tel:+74952553362" class="phone-link">+7 (495) 255-33-62</a>
+          <div class="social-icons">
+            <a href="#" aria-label="Telegram">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+            </a>
+            <a href="#" aria-label="WhatsApp">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Main header row -->
+  <div class="header-main">
+    <div class="container">
+      <div class="header-main-inner">
+
+        <a href="/" class="logo">БОЛЬШОЙ МАСТЕР</a>
+
+        <button class="btn-catalog" id="catalogToggle">
+          <!-- icon: menu -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <span class="btn-catalog-text">Каталог</span>
+        </button>
+
+        <!-- Desktop search -->
+        <div class="search-wrapper">
+          <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="ПОИСК" />
+            <button class="search-btn" id="searchBtn" aria-label="Поиск">
+              <!-- icon: search -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile search toggle -->
+        <button class="mobile-search-toggle" id="mobileSearchToggle" aria-label="Поиск">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="header-actions">
+          <button class="action-btn">
+            <!-- icon: user -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="action-label">Войти</span>
+          </button>
+
+          <button class="cart-btn" id="cartBtn">
+            <span class="cart-icon-mobile">
+              <!-- icon: shopping-cart -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            </span>
+            <span class="cart-label">Корзина</span>
+            <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+            <span class="cart-total" id="cartTotal"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile search panel -->
+  <div class="mobile-search-panel" id="mobileSearchPanel">
+    <div class="search-box">
+      <input type="text" class="search-input" id="mobileSearchInput" placeholder="ПОИСК" />
+      <button class="search-btn" id="mobileSearchBtn" aria-label="Поиск">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button class="mobile-search-close" id="mobileSearchClose" aria-label="Закрыть поиск">
+        <!-- icon: x -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="#">О компании</a>
+      <a href="#">Бренды</a>
+      <a href="#">Доставка</a>
+      <a href="#">Оплата</a>
+      <a href="#">Гарантия</a>
+      <a href="#">Сертификаты</a>
+      <a href="#">Контакты</a>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Войти
+      </button>
+    </div>
+  </nav>
+
+  <!-- Catalog dropdown -->
+  <div class="catalog-dropdown" id="catalogDropdown">
+    <div class="container catalog-dropdown-inner">
+      <nav class="catalog-grid">
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Отопление и водоснабжение</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Водонагреватели и климат</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Трубы и фитинги</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Насосы и оборудование</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Радиаторы и арматура</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Инструменты и аксессуары</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Промышленные рукава и шланги</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Промышленное оборудование</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>КИП</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Котлы и бойлеры</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Канализация и сифоны</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Водоподготовка</span></a>
+        <a href="#" class="catalog-link"><span class="catalog-dot"></span><span>Крепёж</span></a>
+      </nav>
+      <button class="catalog-close" id="catalogClose" aria-label="Закрыть каталог">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+</header>
+
+<div class="header-spacer"></div>
+
+<!-- ============================================
+     MAIN CONTENT
+     ============================================ -->
+<main>
+
+  <!-- Banner Carousel 1 -->
+  <section class="section-banner">
+    <div class="container">
+      <div class="carousel" id="carousel1">
+        <div class="carousel-slide active">
+          <img src="/industrial-plumbing-equipment.jpg" alt="Промышленная сантехника" />
+          <div class="carousel-overlay">
+            <h2>Промышленная сантехника</h2>
+            <p>Профессиональные решения для промышленных объектов</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/heating-systems-boilers.jpg" alt="Системы отопления" />
+          <div class="carousel-overlay">
+            <h2>Системы отопления</h2>
+            <p>Надежное оборудование для вашего комфорта</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/water-supply-pipes.jpg" alt="Водоснабжение" />
+          <div class="carousel-overlay">
+            <h2>Водоснабжение</h2>
+            <p>Качественные решения для водоснабжения</p>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-prev" data-carousel="carousel1" data-dir="prev" aria-label="Предыдущий слайд">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" data-carousel="carousel1" data-dir="next" aria-label="Следующий слайд">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="carousel-dots">
+          <button class="carousel-dot-btn active" data-carousel="carousel1" data-slide="0" aria-label="Слайд 1"></button>
+          <button class="carousel-dot-btn" data-carousel="carousel1" data-slide="1" aria-label="Слайд 2"></button>
+          <button class="carousel-dot-btn" data-carousel="carousel1" data-slide="2" aria-label="Слайд 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section class="brands-section">
+    <div class="container">
+      <div class="brands-grid">
+        <div class="brand-card">
+          <!-- Wrench icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span>BOSCH</span>
+        </div>
+        <div class="brand-card">
+          <!-- Zap icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+          <span>MAKITA</span>
+        </div>
+        <div class="brand-card">
+          <!-- Hammer icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/></svg>
+          <span>DEWALT</span>
+        </div>
+        <div class="brand-card">
+          <!-- Drill icon (using cog) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg>
+          <span>HITACHI</span>
+        </div>
+        <div class="brand-card">
+          <!-- Cog icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>METABO</span>
+        </div>
+        <div class="brand-card">
+          <!-- Share2 icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+          <span>FESTOOL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sales / Discounts -->
+  <section class="sales-section">
+    <div class="container">
+      <div class="sales-frame">
+        <div class="sales-badge">
+          <!-- icon: tag -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+          <span>РАСПРОДАЖА</span>
+        </div>
+
+        <h2 class="sales-title">Скидки и акции</h2>
+
+        <div class="sales-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="discount-badge">-22%</span>
+              <img src="/gas-boiler.png" alt="Котел газовый настенный 24 кВт" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-name line-clamp-2">Котел газовый настенный 24 кВт</div>
+              <div class="product-specs">
+                <span>&bull; Мощность: 24 кВт</span>
+                <span>&bull; Тип: настенный</span>
+              </div>
+              <div class="product-card-footer">
+                <div class="product-price">35 000 &#8381;</div>
+                <span class="product-old-price">45 000 &#8381;</span>
+                <button class="btn-cart" data-id="5" data-name="Котел газовый настенный 24 кВт" data-price="35000">В корзину</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="discount-badge">-25%</span>
+              <img src="/circulation-pump.jpg" alt="Насос циркуляционный" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-name line-clamp-2">Насос циркуляционный</div>
+              <div class="product-specs">
+                <span>&bull; Производительность: 3 м&sup3;/ч</span>
+                <span>&bull; Напор: 6 м</span>
+              </div>
+              <div class="product-card-footer">
+                <div class="product-price">4 500 &#8381;</div>
+                <span class="product-old-price">6 000 &#8381;</span>
+                <button class="btn-cart" data-id="6" data-name="Насос циркуляционный" data-price="4500">В корзину</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="discount-badge">-20%</span>
+              <img src="/radiator.jpg" alt="Радиатор биметаллический" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-name line-clamp-2">Радиатор биметаллический</div>
+              <div class="product-specs">
+                <span>&bull; Секций: 10 шт</span>
+                <span>&bull; Мощность: 1800 Вт</span>
+              </div>
+              <div class="product-card-footer">
+                <div class="product-price">2 800 &#8381;</div>
+                <span class="product-old-price">3 500 &#8381;</span>
+                <button class="btn-cart" data-id="7" data-name="Радиатор биметаллический" data-price="2800">В корзину</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="discount-badge">-20%</span>
+              <img src="/water-heater.png" alt="Водонагреватель 80л" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-name line-clamp-2">Водонагреватель 80л</div>
+              <div class="product-specs">
+                <span>&bull; Объем: 80 л</span>
+                <span>&bull; Мощность: 2 кВт</span>
+              </div>
+              <div class="product-card-footer">
+                <div class="product-price">12 000 &#8381;</div>
+                <span class="product-old-price">15 000 &#8381;</span>
+                <button class="btn-cart" data-id="8" data-name="Водонагреватель 80л" data-price="12000">В корзину</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-card-image">
+              <span class="discount-badge">-20%</span>
+              <img src="/floor-heating-installation.png" alt="Теплый пол электрический" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-name line-clamp-2">Теплый пол электрический</div>
+              <div class="product-specs">
+                <span>&bull; Площадь: 5 м&sup2;</span>
+                <span>&bull; Мощность: 750 Вт</span>
+              </div>
+              <div class="product-card-footer">
+                <div class="product-price">3 200 &#8381;</div>
+                <span class="product-old-price">4 000 &#8381;</span>
+                <button class="btn-cart" data-id="9" data-name="Теплый пол электрический" data-price="3200">В корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Categories -->
+  <section class="catalog-section">
+    <div class="container">
+      <h2 class="catalog-section-title">Каталог</h2>
+      <div class="categories-grid" id="categoriesGrid">
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/industrial-instruments.jpg" alt="КИП" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">КИП</h3><p>251 товар</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/industrial-equipment.png" alt="Промышленное оборудование" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Промышленное оборудование</h3><p>5215 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/water-floor-heating.jpg" alt="Водяной тёплый пол" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Водяной тёплый пол</h3><p>30 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/electric-floor-heating.jpg" alt="Электрический тёплый пол" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Электрический тёплый пол</h3><p>77 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/heating-automation.jpg" alt="Автоматика для отопления" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Автоматика для отопления</h3><p>284 товара</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/industrial-boilers.png" alt="Котлы" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Котлы</h3><p>847 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/water-heaters.jpg" alt="Бойлеры" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Бойлеры</h3><p>207 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/water-heaters-tank.jpg" alt="Водонагреватели" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Водонагреватели</h3><p>106 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/air-conditioning.jpg" alt="Кондиционеры и вентиляция" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Кондиционеры и вентиляция</h3><p>225 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/pipes.jpg" alt="Трубы" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Трубы</h3><p>500 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/pumps.jpg" alt="Насосы и насосное оборудование" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Насосы и насосное оборудование</h3><p>986 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/expansion-tanks.jpg" alt="Баки мембранные" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Баки мембранные</h3><p>106 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/water-leak-protection.jpg" alt="Системы защиты от протечки воды" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Системы защиты от протечки воды</h3><p>140 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Арматура для котельных" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Арматура для котельных</h3><p>881 товар</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Фитинги" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Фитинги</h3><p>4589 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Радиаторы и арматура" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Радиаторы и арматура</h3><p>3535 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Водоподготовка" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Водоподготовка</h3><p>118 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Инструмент и аксессуары для монтажа" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Инструмент и аксессуары для монтажа</h3><p>180 товаров</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Крепёж" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Крепёж</h3><p>42 товара</p></div>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-card-image"><img src="/placeholder.svg" alt="Теплоноситель и промывка для отопления" /></div>
+          <div class="category-card-body"><h3 class="line-clamp-2">Теплоноситель и промывка для отопления</h3><p>29 товаров</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Carousel 2 (duplicate) -->
+  <section class="section-banner">
+    <div class="container">
+      <div class="carousel" id="carousel2">
+        <div class="carousel-slide active">
+          <img src="/industrial-plumbing-equipment.jpg" alt="Промышленная сантехника" />
+          <div class="carousel-overlay">
+            <h2>Промышленная сантехника</h2>
+            <p>Профессиональные решения для промышленных объектов</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/heating-systems-boilers.jpg" alt="Системы отопления" />
+          <div class="carousel-overlay">
+            <h2>Системы отопления</h2>
+            <p>Надежное оборудование для вашего комфорта</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/water-supply-pipes.jpg" alt="Водоснабжение" />
+          <div class="carousel-overlay">
+            <h2>Водоснабжение</h2>
+            <p>Качественные решения для водоснабжения</p>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-prev" data-carousel="carousel2" data-dir="prev" aria-label="Предыдущий слайд">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-btn carousel-next" data-carousel="carousel2" data-dir="next" aria-label="Следующий слайд">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="carousel-dots">
+          <button class="carousel-dot-btn active" data-carousel="carousel2" data-slide="0" aria-label="Слайд 1"></button>
+          <button class="carousel-dot-btn" data-carousel="carousel2" data-slide="1" aria-label="Слайд 2"></button>
+          <button class="carousel-dot-btn" data-carousel="carousel2" data-slide="2" aria-label="Слайд 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>О компании</h3>
+        <ul>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Бренды</a></li>
+          <li><a href="#">Сертификаты</a></li>
+          <li><a href="#">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Покупателям</h3>
+        <ul>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Возврат товара</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Каталог</h3>
+        <ul>
+          <li><a href="#">Котлы</a></li>
+          <li><a href="#">Насосы</a></li>
+          <li><a href="#">Радиаторы</a></li>
+          <li><a href="#">Трубы и фитинги</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <ul>
+          <li class="contact-item">
+            <!-- icon: phone -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+74952553362">+7 (495) 255-33-62</a>
+          </li>
+          <li class="contact-item">
+            <!-- icon: mail -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:info@bigmaster.ru">info@bigmaster.ru</a>
+          </li>
+          <li class="contact-item">
+            <!-- icon: map-pin -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Москва, ул. Примерная, д. 1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 БОЛЬШОЙ МАСТЕР. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
