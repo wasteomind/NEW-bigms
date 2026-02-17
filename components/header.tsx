@@ -26,6 +26,18 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
+  const handleSearch = () => {
+    if (searchValue.trim()) {
+      console.log("Search:", searchValue.trim())
+    }
+  }
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch()
+    }
+  }
+
   const catalogCategories = [
     {
       title: "ОТОПЛЕНИЕ И ВОДОСНАБЖЕНИЕ",
@@ -148,15 +160,22 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
               </Button>
 
               <div className="hidden sm:flex flex-1 max-w-3xl relative mx-4">
-                <div className="relative bg-white/10 rounded-md px-4 py-2.5 border border-white/20 hover:border-white/40 transition-colors w-full">
+                <div className="relative flex items-center bg-white/10 rounded-md border border-white/20 hover:border-white/40 focus-within:border-white/50 transition-colors w-full">
                   <Input
                     type="text"
                     placeholder="ПОИСК"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
-                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-6 px-0 text-sm"
+                    onKeyDown={handleSearchKeyDown}
+                    className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-[42px] px-4 text-sm"
                   />
-                  <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 pointer-events-none" />
+                  <button
+                    onClick={handleSearch}
+                    aria-label="Поиск"
+                    className="flex items-center justify-center w-[42px] h-[42px] flex-shrink-0 bg-[#ff4444] rounded-r-md text-white transition-all duration-200 hover:bg-[#ff5c5c] hover:shadow-[0_0_12px_rgba(255,68,68,0.4)] active:scale-90 active:bg-[#e03333] cursor-pointer"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
 
@@ -192,18 +211,26 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
         {isMobileSearchOpen && (
           <div className="absolute top-full left-0 right-0 bg-[#2d3e7f] border-t border-[#3d4e8f] shadow-lg sm:hidden z-50">
             <div className="container mx-auto px-4 py-4">
-              <div className="relative bg-white/10 rounded-md px-4 py-3 border border-white/20">
+              <div className="relative flex items-center bg-white/10 rounded-md border border-white/20">
                 <Input
                   type="text"
                   placeholder="ПОИСК"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-7 px-0 text-base"
+                  onKeyDown={handleSearchKeyDown}
+                  className="w-full bg-transparent border-0 text-white placeholder:text-white/60 focus-visible:ring-0 focus-visible:ring-offset-0 h-[44px] px-4 text-base"
                   autoFocus
                 />
                 <button
+                  onClick={handleSearch}
+                  aria-label="Поиск"
+                  className="flex items-center justify-center w-[44px] h-[44px] flex-shrink-0 bg-[#ff4444] text-white transition-all duration-200 hover:bg-[#ff5c5c] active:scale-90 active:bg-[#e03333] cursor-pointer"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+                <button
                   onClick={() => setIsMobileSearchOpen(false)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
+                  className="flex items-center justify-center w-[44px] h-[44px] flex-shrink-0 rounded-r-md text-white/60 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
