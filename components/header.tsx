@@ -39,39 +39,19 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
   }
 
   const catalogCategories = [
-    {
-      title: "ОТОПЛЕНИЕ И ВОДОСНАБЖЕНИЕ",
-      items: [
-        "Промышленные рукава и шланги",
-        "Промышленное оборудование",
-        "КИП",
-        "Водяной тёплый пол",
-        "Электрический тёплый пол",
-        "Автоматика для отопления",
-        "Котлы",
-        "Бойлеры",
-      ],
-    },
-    {
-      title: "ВОДОНАГРЕВАТЕЛИ И КЛИМАТ",
-      items: ["Водонагреватели", "Кондиционеры и вентиляция", "Баки мембранные", "Системы защиты от протечек воды"],
-    },
-    {
-      title: "ТРУБЫ И ФИТИНГИ",
-      items: ["Трубы", "Фитинги", "Желоба для труб", "Канализация, гофры, сифоны, трапы"],
-    },
-    {
-      title: "НАСОСЫ И ОБОРУДОВАНИЕ",
-      items: ["Насосы и насосное оборудование", "Теплоноситель и промывка для отопления", "Водоподготовка"],
-    },
-    {
-      title: "РАДИАТОРЫ И АРМАТУРА",
-      items: ["Радиаторы и арматура", "Арматура для котельных", "Крепёж"],
-    },
-    {
-      title: "ИНСТРУМЕНТЫ И АКСЕССУАРЫ",
-      items: ["Инструмент и аксессуары для монтажа"],
-    },
+    "Отопление и водоснабжение",
+    "Водонагреватели и климат",
+    "Трубы и фитинги",
+    "Насосы и оборудование",
+    "Радиаторы и арматура",
+    "Инструменты и аксессуары",
+    "Промышленные рукава и шланги",
+    "Промышленное оборудование",
+    "КИП",
+    "Котлы и бойлеры",
+    "Канализация и сифоны",
+    "Водоподготовка",
+    "Крепёж",
   ]
 
   return (
@@ -280,35 +260,25 @@ export function Header({ cartItems, onUpdateCart }: HeaderProps) {
             isCatalogOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="container mx-auto px-4 py-6 md:py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="container mx-auto px-4 py-4 md:py-5 relative">
+            <nav className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0.5">
               {catalogCategories.map((category, idx) => (
-                <div key={idx} className="space-y-3 md:space-y-4">
-                  <h3 className="text-xs md:text-sm font-bold text-[#2d3e7f] uppercase tracking-wide border-b-2 border-[#ff4444] pb-2">
-                    {category.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {category.items.map((item, itemIdx) => (
-                      <li key={itemIdx}>
-                        <a
-                          href="#"
-                          className="text-gray-700 hover:text-[#ff4444] transition-colors duration-200 text-xs md:text-sm flex items-center group"
-                        >
-                          <span className="w-0 h-0.5 bg-[#ff4444] group-hover:w-4 transition-all duration-200 mr-0 group-hover:mr-2"></span>
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <a
+                  key={idx}
+                  href="#"
+                  className="flex items-center gap-2.5 px-3 py-2.5 rounded-md text-sm text-gray-700 hover:bg-[#2d3e7f]/5 hover:text-[#ff4444] transition-colors duration-150 group"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff4444] flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
+                  <span className="font-medium">{category}</span>
+                </a>
               ))}
-            </div>
+            </nav>
 
             <button
               onClick={() => setIsCatalogOpen(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
           </div>
         </div>
