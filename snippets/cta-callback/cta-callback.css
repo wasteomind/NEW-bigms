@@ -1,0 +1,225 @@
+/* ============================================
+   CTA CALLBACK WIDGET + POPUP — Standalone CSS
+   Colors: #ff4444 (accent), #2d3e7f (primary)
+   ============================================ */
+
+/* --- Floating Widget Button --- */
+.cta-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #ff4444;
+  color: #fff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 24px rgba(255,68,68,0.4);
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+.cta-widget:hover {
+  background-color: #e03333;
+  box-shadow: 0 8px 32px rgba(255,68,68,0.55);
+  transform: scale(1.04);
+}
+
+.cta-widget svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.cta-widget-text {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(255,68,68,0.4); }
+  50%      { box-shadow: 0 6px 36px rgba(255,68,68,0.7), 0 0 0 8px rgba(255,68,68,0.15); }
+}
+
+/* --- Popup Overlay --- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Popup Card --- */
+.popup {
+  background-color: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1rem;
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.3s;
+}
+
+.popup-overlay.active .popup {
+  transform: translateY(0) scale(1);
+}
+
+/* --- Close Button --- */
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #9ca3af;
+  transition: color 0.2s;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  color: #374151;
+}
+
+.popup-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Phone Icon Circle --- */
+.popup-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ff4444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.popup-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* --- Title & Subtitle --- */
+.popup-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #2d3e7f;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.popup-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* --- Form --- */
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popup-input-wrapper {
+  position: relative;
+}
+
+.popup-phone-input {
+  width: 100%;
+  height: 52px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 1rem;
+  font-size: 16px;
+  font-family: inherit;
+  color: #111827;
+  background: #f9fafb;
+  transition: border-color 0.2s, background-color 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.popup-phone-input:focus {
+  border-color: #2d3e7f;
+  background: #fff;
+}
+
+.popup-phone-input::placeholder {
+  color: #9ca3af;
+}
+
+.popup-submit {
+  width: 100%;
+  height: 52px;
+  border-radius: 10px;
+  background-color: #ff4444;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.popup-submit:hover {
+  background-color: #e03333;
+  box-shadow: 0 4px 16px rgba(255,68,68,0.35);
+}
+
+.popup-submit:active {
+  transform: scale(0.97);
+}
+
+/* --- Privacy Note --- */
+.popup-privacy {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+/* --- Mobile --- */
+@media (max-width: 640px) {
+  .cta-widget {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .cta-widget-text {
+    font-size: 12px;
+  }
+
+  .popup {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
