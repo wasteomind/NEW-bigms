@@ -940,7 +940,40 @@ input {
 @keyframes promo-shine {
   0%, 70%, 100% { opacity: 0; transform: translateX(-80%); }
   80%           { opacity: 1; transform: translateX(80%);  }
-}
+  }
+
+  /* --- "Новинка" variant (green) --- */
+  .promo-badge.badge-new {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  box-shadow: 0 2px 8px rgba(22,163,74,0.3);
+  animation: badge-new-shimmer 3s ease-in-out infinite;
+  }
+  @keyframes badge-new-shimmer {
+  0%, 100% { box-shadow: 0 2px 8px rgba(22,163,74,0.30); }
+  50%      { box-shadow: 0 2px 14px rgba(34,197,94,0.50); }
+  }
+
+  /* --- "Хит" variant (navy blue) --- */
+  .promo-badge.badge-hit {
+  background: linear-gradient(135deg, #2d3e7f 0%, #4f5fad 100%);
+  box-shadow: 0 2px 8px rgba(45,62,127,0.3);
+  animation: badge-hit-shimmer 3s ease-in-out infinite;
+  }
+  @keyframes badge-hit-shimmer {
+  0%, 100% { box-shadow: 0 2px 8px rgba(45,62,127,0.30); }
+  50%      { box-shadow: 0 2px 14px rgba(79,95,173,0.50); }
+  }
+
+  /* --- "Советуем" variant (amber/gold) --- */
+  .promo-badge.badge-recommend {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  box-shadow: 0 2px 8px rgba(217,119,6,0.3);
+  animation: badge-recommend-shimmer 3s ease-in-out infinite;
+  }
+  @keyframes badge-recommend-shimmer {
+  0%, 100% { box-shadow: 0 2px 8px rgba(217,119,6,0.30); }
+  50%      { box-shadow: 0 2px 14px rgba(245,158,11,0.50); }
+  }
 
 .product-card-body {
   padding: 0.75rem 1rem;
